@@ -1,1 +1,14 @@
 from models.ASTI_Net import ASTI_Net
+
+from models.ASTI_Net_Ablation import ASTI_Net_Without_SC
+from models.ASTI_Net_Ablation import ASTI_Net_Without_MC
+from models.ASTI_Net_Ablation import ASTI_Net_Without_FR
+
+from models.ASTI_Net_Ablation_Add import ASTI_Net_Without_DeformConv
+from models.ASTI_Net_Ablation_Add import ASTI_Net_Without_Channel_Attention
+from models.ASTI_Net_Ablation_Add import ASTI_Net_Without_MHSA
+
+from models.ASTI_Net_Soft import ASTI_Net_DepWise
+from models.ASTI_Net_Soft import ASTI_Net_Linformer
+from models.ASTI_Net_Soft import ASTI_Net_DepWise_Linformer
+
