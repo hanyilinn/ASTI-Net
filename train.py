@@ -20,8 +20,16 @@ def weights_init(m):
             torch.nn.init.zeros_(m.bias)
 
 noise_type = 'EMG_Semi'
-
 model_name = 'ASTI-Net'
+# model_name = 'ASTI_Net_Without_SC'
+# model_name = 'ASTI_Net_Without_MC'
+# model_name = 'ASTI_Net_Without_FR'
+# model_name = 'ASTI_Net_Without_DeformConv'
+# model_name = 'ASTI_Net_Without_Channel_Attention'
+# model_name = 'ASTI_Net_Without_MHSA'
+# model_name = 'ASTI_Net_DepWise'
+# model_name = 'ASTI_Net_Linformer'
+# model_name = 'ASTI_Net_DepWise_Linformer'
 
 print(noise_type)
 print(model_name)
@@ -228,9 +236,9 @@ if __name__ == '__main__':
     setup_seed(seed)
 
     batch_size = 16
-    epochs = 100
-    # learning_rate = 5e-5
-    learning_rate = 1e-4
+    epochs = 50
+    learning_rate = 5e-5
+    # learning_rate = 1e-4
 
     cha_num = 19
     if noise_type == 'EOG_Semi':
@@ -241,6 +249,16 @@ if __name__ == '__main__':
     train_dataloader, val_dataloader, test_dataloader = data_prep(batch_size)
         
     model = ASTI_Net(eeg_length, cha_num)
+    # model = ASTI_Net_Without_SC()
+    # model = ASTI_Net_Without_MC()
+    # model = ASTI_Net_Without_FR()
+    # model = ASTI_Net_Without_DeformConv()
+    # model = ASTI_Net_Without_Channel_Attention()
+    # model = ASTI_Net_Without_MHSA()
+    # model = ASTI_Net_DepWise(cha_num=cha_num)
+    # model = ASTI_Net_Linformer(cha_num=cha_num)
+    # model = ASTI_Net_DepWise_Linformer(cha_num=cha_num)
+    
     model.apply(weights_init)
     model = model.to(device)
 
@@ -256,6 +274,15 @@ if __name__ == '__main__':
     del model
 
     model = ASTI_Net(eeg_length, cha_num)
+    # model = ASTI_Net_Without_SC()
+    # model = ASTI_Net_Without_MC()
+    # model = ASTI_Net_Without_FR()
+    # model = ASTI_Net_Without_DeformConv()
+    # model = ASTI_Net_Without_Channel_Attention()
+    # model = ASTI_Net_Without_MHSA()
+    # model = ASTI_Net_DepWise(cha_num=cha_num)
+    # model = ASTI_Net_Linformer(cha_num=cha_num)
+    # model = ASTI_Net_DepWise_Linformer(cha_num=cha_num)
 
     model.to(device)
     device_ids = [0, 1]
