@@ -6,6 +6,8 @@ This repository contains the implementation of ASTI-Net, a novel deep learning-b
 
 ## Network Structure
 
+The overall architecture of ASTI-Net is illustrated below. It consists of three components: a multi-channel spatial feature extraction branch (MSFE Branch), a single-channel temporal feature extraction branch (STFE Branch), and a fusion reconstruction module (FR Module). The two branches process the EEG input in different ways: the multi-channel branch takes the entire two-dimensional EEG signal, while the single-channel branch processes each channel independently.
+
 ![ASTI-Net Architecture](pictures/Architecture_of_ASTI-Net.jpg)
 
 ## Results
