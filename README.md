@@ -36,3 +36,7 @@ We recommend using `pip` or `conda` to install the required dependencies. Below 
 - seaborn >= 0.13.2
 - tqdm >= 4.66.4
 - requests >= 2.31.0
+
+### Cite
+For more details, you can refer to the [DOI: 10.1109/JBHI.2025.3555813](https://doi.org/10.1109/JBHI.2025.3555813).
+
